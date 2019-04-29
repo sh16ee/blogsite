@@ -11,7 +11,7 @@ h1 a, h2 a {
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 20pt;
+    font-size: 25pt;
     text-decoration: none;
 
 }
@@ -49,9 +49,4 @@ h1, h2, h3, h4 {
 
 .post h2 a, .post h2 a:visited {
     color: #2c872b;
-}
-
-.grid-container{
-  display: grid;
-  grid-template-columns: auto auto auto auto ;
 }

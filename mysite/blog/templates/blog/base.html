@@ -5,21 +5,23 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/res.css' %}">
+        <link rel="stylesheet" href="{% static 'css/ress.css' %}">
     </head>
     <body>
         <div class="page-header">
             <h1><a href="/">REAL ESTATE</a></h1>
             {% if user.is_authenticated %}
-
-              <!--<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>-->
-              <p><a href="{% url 'logout' %}">Log out</a></p>
+              {% if user.profile.role == "seller"  %}
+              <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+              {% endif %}
+              <br>
+              <a href="{% url 'logout' %}"><button type='submit'>Log out</button></a>
 
             {% endif %}
             {% if not user.is_authenticated %}
 
-              <!--<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>-->
-              <p><a href="{% url 'login' %}">Sign In</a></p>
+              <!-- <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a> -->
+              <a href="{% url 'login' %}"><button type='submit'>Sign In</button></a>
 
             {% endif %}
         </div>
